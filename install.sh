@@ -1,10 +1,10 @@
+#!/usr/bin/env bash
 set -euo pipefail
-
 
 # Install Homebrew and setup workspace
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -12,7 +12,6 @@ brew install derailed/k9s/k9s
 brew install htop
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
-/bin/bash -c setup-workspace
 
 # Setup dotfiles
 DOTFILES_PATH="$HOME/dotfiles"
