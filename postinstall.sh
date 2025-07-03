@@ -11,7 +11,7 @@ fi
 /home/linuxbrew/.linuxbrew/bin/brew install zsh-syntax-highlighting
 
 # Setup dotfiles
-DOTFILES_PATH="$HOME/dotfiles"
+DOTFILES_PATH="$HOME/dotfiles/dotfiles"
 # Symlink dotfiles to the root within your workspace
 find $DOTFILES_PATH -type f -path "$DOTFILES_PATH/.*" |
 while read df; do
@@ -25,5 +25,6 @@ echo "Setting up gitconfig..."
 echo " - dd-source"
 cat "$DOTFILES_PATH/conf/dd-source_gitconfig" > "$HOME/dd/dd-source/.git/config"
 
-# setup workspace
+# setup workspaces
+echo "Setting up winter..."
 setup-repo winter
