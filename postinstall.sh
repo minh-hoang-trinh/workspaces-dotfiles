@@ -19,3 +19,11 @@ while read df; do
   mkdir -p "$(dirname "$link")"
   ln -sf "$df" "$link"
 done
+
+# setup gitconfig
+echo "Setting up gitconfig..."
+echo " - dd-source"
+cat "$DOTFILES_PATH/conf/dd-source_gitconfig" > "$HOME/dd/dd-source/.git/config"
+
+# setup workspace
+setup-repo winter

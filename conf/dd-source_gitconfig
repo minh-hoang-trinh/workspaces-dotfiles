@@ -1,0 +1,20 @@
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+[remote "origin"]
+        url = git@github.com:DataDog/dd-source
+        # fetch = +refs/heads/*:refs/remotes/origin/*  # the original setting
+        fetch = +refs/heads/main:refs/remotes/origin/main
+        fetch = +refs/heads/ouisvc-team/staging:refs/remotes/origin/ouisvc-team/staging
+        fetch = +refs/heads/teams-staging:refs/remotes/origin/teams-staging
+        fetch = +refs/heads/minhhoang.trinh/*:refs/remotes/origin/minhhoang.trinh/*
+        # fetch = +refs/tags/green:refs/tags/green
+        # tagOpt = --no-tags
+        prune = true
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
